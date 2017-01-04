@@ -1,4 +1,4 @@
-package BAI.BAI_project;
+package JPA_1.esaip_jee;
 
 import junit.framework.Test;
 import junit.framework.TestCase;
