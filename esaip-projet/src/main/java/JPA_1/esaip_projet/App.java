@@ -1,4 +1,4 @@
-package JPA_1.esaip_jee;
+package JPA_1.esaip_projet;
 
 /**
  * Hello world!
@@ -6,7 +6,6 @@ package JPA_1.esaip_jee;
  */
 public class App {
 	public static void main(String[] args) {
-		System.out.println("Bouch");
-
+		System.out.println("Lena !");
 	}
 }

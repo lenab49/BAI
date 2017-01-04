@@ -3,11 +3,11 @@
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>JPA_1</groupId>
-  <artifactId>esaip_jee</artifactId>
+  <artifactId>esaip-projet</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   <packaging>jar</packaging>
 
-  <name>esaip_jee</name>
+  <name>esaip-projet</name>
   <url>http://maven.apache.org</url>
 
   <properties>

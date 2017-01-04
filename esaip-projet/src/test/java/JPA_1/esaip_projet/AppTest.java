@@ -1,4 +1,4 @@
-package JPA_1.esaip_jee;
+package JPA_1.esaip_projet;
 
 import junit.framework.Test;
 import junit.framework.TestCase;
