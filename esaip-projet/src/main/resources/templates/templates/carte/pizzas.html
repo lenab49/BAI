@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+  <title>PizzAp</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <link th:href="@{/css/bootstrap.min.css}" rel="stylesheet"/>
+  <link th:href="@{/css/core.css}" rel="stylesheet"/>
+</head>
+
+<body th:with="page='pizzas'" >
+<div th:replace="fragments/header :: header">&nbsp;</div>
+<div class="container">
+  <div>
+    <table class="table table-striped">
+      <thead>
+      <tr>
+        <th style="width: 150px;">Nom</th>
+        <th style="width: 200px;">Description</th>
+        <th style="width: 50px;">&nbsp;</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr th:each="pizza : ${pizzas}">
+        <td th:text="${pizza.nom}">&nbsp;</td>
+        <td th:text="${pizza.description}">&nbsp;</td>
+        <td>
+          <form action="#" th:action="@{/commande}" method="post">
+            <input type="hidden" name="code" th:value="${pizza.code}"/>
+            <input class="btn btn-default" type="submit" value="Miam"/>
+          </form>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+  <div th:replace="fragments/footer :: footer"></div>
+</div>
+
+</body>
+</html>

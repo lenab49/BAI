@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+  <title>PizzAp</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <link th:href="@{/css/bootstrap.min.css}" rel="stylesheet"/>
+  <link th:href="@{/css/core.css}" rel="stylesheet"/>
+</head>
+
+<body th:with="page='commande'">
+<div th:replace="fragments/header :: header">&nbsp;</div>
+<div class="container">
+  <div>
+    <table class="table table-striped">
+      <thead>
+      <tr>
+        <th style="width: 150px;">Pizza</th>
+        <th style="width: 200px;">Quantité</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr th:each="pizza : ${panier}">
+        <td th:text="${pizza.key}">&nbsp;</td>
+        <td th:text="${pizza.value}">&nbsp;</td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="text-center">
+    <form action="#" th:action="@{/commande/confirmer}" method="post">
+      <input th:class="(${#maps.isEmpty(panier)}? 'btn btn-primary disabled' : 'btn btn-primary')" type="submit"
+             value="Vite, j'ai faim !"/>
+    </form>
+  </div>
+  <div th:replace="fragments/footer :: footer"></div>
+</div>
+
+</body>
+</html>

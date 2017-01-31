@@ -23,10 +23,6 @@
   <name>esaip-projet</name>
   <url>http://maven.apache.org</url>
   
-  
-
-  
-
   <dependencies>
     <dependency>
       <groupId>junit</groupId>
@@ -39,7 +35,7 @@
       <groupId>org.springframework.boot</groupId>
       <artifactId>spring-boot-devtools</artifactId>
     </dependency>
-
+   
     <dependency>
       <groupId>org.springframework.boot</groupId>
       <artifactId>spring-boot-starter-actuator</artifactId>
@@ -60,9 +56,11 @@
     </dependency>
 
     <dependency>
-      <groupId>org.flywaydb</groupId>
-      <artifactId>flyway-core</artifactId>
-    </dependency>
+   
+  <groupId>org.flywaydb</groupId>
+  <artifactId>flyway-core</artifactId>
+  <version>3.2</version>
+</dependency>
 
     <!-- Runtime -->
     <dependency>
