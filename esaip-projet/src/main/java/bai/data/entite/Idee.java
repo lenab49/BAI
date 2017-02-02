@@ -1,43 +1,47 @@
 package bai.data.entite;
 
-import java.time.LocalDate;
-import java.util.ArrayList;
-import java.util.List;
-
-import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.OneToMany;
-import javax.persistence.PrePersist;
-
 
 @Entity
 public class Idee {
-	  @Id @GeneratedValue
-	  private Long id;
-	  private String Title;
-	  private String Contenu;
+	@Id
+	@GeneratedValue
+	private Long id;
+	private String title;
+	private String contenu;
+	private String auteur;
+
 	public Long getId() {
 		return id;
 	}
+
 	public void setId(Long id) {
 		this.id = id;
 	}
+
 	public String getTitle() {
-		return Title;
+		return title;
 	}
+
 	public void setTitle(String title) {
-		Title = title;
+		this.title = title;
 	}
+
 	public String getContenu() {
-		return Contenu;
+		return contenu;
 	}
+
 	public void setContenu(String contenu) {
-		Contenu = contenu;
+		this.contenu = contenu;
 	}
-	 
 
+	public String getAuteur() {
+		return auteur;
+	}
 
+	public void setAuteur(String auteur) {
+		this.auteur = auteur;
+	}
 }
