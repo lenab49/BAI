@@ -1,5 +1,5 @@
 package bai.data.entite;
 
-public class Theme {
+public class Idee {
 
 }
