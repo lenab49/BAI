@@ -15,6 +15,10 @@ public class ListeIdee {
 	@Id
 	@GeneratedValue
 	private Long id;
+	private String nom;
+	@OneToMany(cascade = CascadeType.PERSIST)
+	@JoinColumn(name = "IDEE_ID", referencedColumnName = "ID")
+	private List<Idee> idees = new ArrayList<>();
 
 	public Long getId() {
 		return id;
@@ -33,16 +37,11 @@ public class ListeIdee {
 	}
 
 	public List<Idee> getIdee() {
-		return idee;
+		return idees;
 	}
 
-	public void setIdee(List<Idee> idee) {
-		this.idee = idee;
+	public void setIdee(List<Idee> idees) {
+		this.idees = idees;
 	}
-
-	private String nom;
-	@OneToMany(cascade = CascadeType.PERSIST)
-	@JoinColumn(name = "IDEE_ID", referencedColumnName = "ID")
-	private List<Idee> idee = new ArrayList<>();
 
 }
