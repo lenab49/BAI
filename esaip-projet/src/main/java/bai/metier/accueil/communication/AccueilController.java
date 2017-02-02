@@ -7,29 +7,24 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import bai.metier.accueil.service.AccueilService.WelcomeService;
+import bai.metier.accueil.service.AccueilService;
 
+@Controller
+@RequestMapping(value = { "/", "/home", "/welcome" })
 public class AccueilController {
+	private static final long serialVersionUID = 1L;
 
-	@Controller
-	@RequestMapping(value = { "/", "/home", "/welcome" })
-	public class WelcomeController {
-		private static final long serialVersionUID = 1L;
+	final AccueilService boiteAIdeeService;
 
-		final WelcomeService magasinService;
-
-		@Autowired
-		public WelcomeController(WelcomeService magasinService) {
-			this.magasinService = magasinService;
-		}
-
-		@RequestMapping(method = RequestMethod.GET)
-		public String home(Map<String, Object> model) {
-			// model.put("nom", magasinService.getMagasin().getNom());
-			// model.put("slogan", magasinService.getMagasin().getSlogan());
-
-			return "home";
-		}
+	@Autowired
+	public AccueilController(AccueilService boiteAIdeeService) {
+		this.boiteAIdeeService = boiteAIdeeService;
 	}
 
+	@RequestMapping(method = RequestMethod.GET)
+	public String home(Map<String, Object> model) {
+		// model.put("nom", boiteAIdeeService.getBoiteAIdee().getNom());
+
+		return "home";
+	}
 }
