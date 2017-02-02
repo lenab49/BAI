@@ -27,6 +27,7 @@ public class AccueilController {
 		public String home(Map<String, Object> model) {
 			// model.put("nom", magasinService.getMagasin().getNom());
 			// model.put("slogan", magasinService.getMagasin().getSlogan());
+			model.put("nom", "Kikooo");
 
 			return "home";
 		}
