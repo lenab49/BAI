@@ -24,7 +24,6 @@ public class AccueilController {
 	@RequestMapping(method = RequestMethod.GET)
 	public String home(Map<String, Object> model) {
 		model.put("nom", boiteAIdeeService.getBoiteAIdee().getNom());
-
 		return "home";
 	}
 }

@@ -19,7 +19,7 @@ public class AccueilService {
 	}
 
 	public BoiteAIdee getBoiteAIdee() {
-		return boiteAIdeeDao.findByNom("BAI");
+		return boiteAIdeeDao.findByNom("TAMERE");
 	}
 
 }
