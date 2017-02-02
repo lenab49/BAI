@@ -3,6 +3,7 @@
 <html xmlns:th="http://www.thymeleaf.org">
 
 <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
   <link rel="stylesheet" media="screen" th:href="@{/css/bootstrap.min.css}"/>
 </head>
 <body>
@@ -16,12 +17,12 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="#" th:href="@{/}">La Boite � Id�es</a>
+      <a class="navbar-brand" href="#" th:href="@{/}">La Boite à Idées</a>
     </div>
     <div class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
-        <!-- <li th:classappend="${page == 'pizzas' ? 'active' : ''}"><a href="#" th:href="@{/pizzas}">Nos pizzas</a></li> -->
-        <!--<li th:classappend="${page == 'commande' ? 'active' : ''}"><a href="#" th:href="@{/commande}">Passer commande</a></li> -->
+        <li th:classappend="${page == 'idee' ? 'active' : ''}"><a href="#" th:href="@{/idee}">Idée</a></li>
+        <li th:classappend="${page == 'listeidee' ? 'active' : ''}"><a href="#" th:href="@{/listeidee}">Liste des idées</a></li>
       </ul>
     </div>
     <!--/.nav-collapse -->
