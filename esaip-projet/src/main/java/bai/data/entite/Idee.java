@@ -9,7 +9,7 @@ public class Idee {
 	@Id
 	@GeneratedValue
 	private Long id;
-	private String title;
+	private String titre;
 	private String contenu;
 	private String auteur;
 
@@ -21,12 +21,12 @@ public class Idee {
 		this.id = id;
 	}
 
-	public String getTitle() {
-		return title;
+	public String getTitre() {
+		return titre;
 	}
 
-	public void setTitle(String title) {
-		this.title = title;
+	public void setTitre(String titre) {
+		this.titre = titre;
 	}
 
 	public String getContenu() {

@@ -21,14 +21,13 @@
         <th style="width: 150px;">auteur</th>
       </tr>
       </thead>
-      <!--<tbody>
-       contenu aproximatif aucune idée de comment gérer ça
-      <tr th:each="idee : ${listidee}">
-        <td th:text="idee">&nbsp;</td>
-        <td th:text="contenu">&nbsp;</td>
-        <td th:text="auteur">&nbsp;</td>
-      </tr> 
-      </tbody>-->
+      <tbody>
+      <tr th:each="idee : ${idees}">
+        <td th:text="${idee.titre}">&nbsp;</td>
+        <td th:text="${idee.contenu}">&nbsp;</td>
+        <td th:text="${idee.auteur}">&nbsp;</td>
+      </tr>
+      </tbody>
     </table>
   </div>
   <div th:replace="fragments/footer :: footer"></div>

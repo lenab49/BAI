@@ -1,11 +1,15 @@
 package bai.metier.listidee.service;
 
+import java.util.Collections;
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
 import bai.data.acces.BoiteAIdeeDao;
+import bai.data.entite.Idee;
 
 @Service
 @Transactional(propagation = Propagation.REQUIRED)
@@ -18,10 +22,12 @@ public class ListeIdeeService {
 		this.boiteAIdeeDao = boiteAIdeeDao;
 	}
 
-	/*
-	 * public List<Idee> getIdees() { List<Idee> idees =
-	 * magasinDao.findByNom("BAI").getListeIdee().getIdees(); // Avoid lazy
-	 * loading exception... // Should use ModelMapper for small projects if
-	 * (idees.size() > 0) { return idees; } return Collections.emptyList(); }
-	 */
+	public List<Idee> getIdee() {
+		List<Idee> idees = boiteAIdeeDao.findByNom("BAI").getListeIdee().getIdee();
+		if (idees.size() > 0) {
+			return idees;
+		}
+		return Collections.emptyList();
+	}
+
 }

@@ -11,14 +11,11 @@ import bai.data.acces.BoiteAIdeeDao;
 @Transactional(propagation = Propagation.REQUIRED)
 public class IdeeService {
 
-	  final BoiteAIdeeDao boiteideeDao;
+	final BoiteAIdeeDao boiteideeDao;
 
-	  @Autowired
-	  public IdeeService(BoiteAIdeeDao boiteideeDao) {
-	    this.boiteideeDao = boiteideeDao;
-	  }
-
+	@Autowired
+	public IdeeService(BoiteAIdeeDao boiteideeDao) {
+		this.boiteideeDao = boiteideeDao;
 	}
 
-
-
+}

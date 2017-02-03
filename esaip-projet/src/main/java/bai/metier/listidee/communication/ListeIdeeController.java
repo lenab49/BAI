@@ -20,8 +20,8 @@ public class ListeIdeeController {
 	}
 
 	@RequestMapping(value = "/listeidee", method = RequestMethod.GET)
-	public String listeIdee(Map<String, Object> model) {
-		// model.put("idee", carteService.getPizzas());
+	public String idees(Map<String, Object> model) {
+		model.put("idees", listeIdeeService.getIdee());
 		return "idee/listeidee";
 	}
 }
