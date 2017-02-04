@@ -11,14 +11,16 @@
 
 <body th:with="page='listeidee'">
 <div th:replace="fragments/header :: header">&nbsp;</div>
+
+
 <div class="container">
   <div>
     <table class="table table-striped">
       <thead>
       <tr>
-        <th style="width: 150px;">titre</th>
-        <th style="width: 200px;">contenu</th>
-        <th style="width: 150px;">auteur</th>
+        <th style="width: 150px;">Titre</th>
+        <th style="width: 200px;">Contenu</th>
+        <th style="width: 150px;">Auteur</th>
       </tr>
       </thead>
       <tbody>
@@ -26,6 +28,7 @@
         <td th:text="${idee.titre}">&nbsp;</td>
         <td th:text="${idee.contenu}">&nbsp;</td>
         <td th:text="${idee.auteur}">&nbsp;</td>
+        
       </tr>
       </tbody>
     </table>
