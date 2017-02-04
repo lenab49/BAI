@@ -17,7 +17,7 @@ public class ListeIdee {
 	private Long id;
 	private String nom;
 	@OneToMany(cascade = CascadeType.PERSIST)
-	@JoinColumn(name = "IDEE_ID", referencedColumnName = "ID")
+	@JoinColumn(name = "LISTE_IDEE_ID", referencedColumnName = "ID")
 	private List<Idee> idees = new ArrayList<>();
 
 	public Long getId() {

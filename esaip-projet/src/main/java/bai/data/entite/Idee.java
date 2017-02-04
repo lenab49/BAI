@@ -13,9 +13,7 @@ public class Idee {
 	@GeneratedValue
 	//@Column(name="id")
 	private Long id;
-	//@Column(name="titre")
 	private String titre;
-//	@Column(name="contenu")
 	private String contenu;
 	//@Column(name="auteur")
 	private String auteur;
