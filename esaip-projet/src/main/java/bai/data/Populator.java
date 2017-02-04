@@ -1,3 +1,4 @@
+
 package bai.data;
 
 import bai.data.entite.BoiteAIdee;

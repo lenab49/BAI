@@ -1,16 +1,23 @@
 package bai.data.entite;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.Table;
 
 @Entity
+@Table(name="IDEE")
 public class Idee {
 	@Id
 	@GeneratedValue
+	//@Column(name="id")
 	private Long id;
-	private String title;
+	//@Column(name="titre")
+	private String titre;
+//	@Column(name="contenu")
 	private String contenu;
+	//@Column(name="auteur")
 	private String auteur;
 
 	public Long getId() {
@@ -21,12 +28,12 @@ public class Idee {
 		this.id = id;
 	}
 
-	public String getTitle() {
-		return title;
+	public String getTitre() {
+		return titre;
 	}
 
-	public void setTitle(String title) {
-		this.title = title;
+	public void setTitre(String titre) {
+		this.titre = titre;
 	}
 
 	public String getContenu() {

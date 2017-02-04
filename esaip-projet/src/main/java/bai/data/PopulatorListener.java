@@ -1,5 +1,8 @@
 package bai.data;
 
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationListener;
 import org.springframework.context.event.ContextRefreshedEvent;
@@ -11,7 +14,7 @@ import bai.data.acces.BoiteAIdeeDao;
 @Component
 @Transactional
 public class PopulatorListener implements ApplicationListener<ContextRefreshedEvent> {
-
+	  
 	private final BoiteAIdeeDao dao;
 	// private boolean alreadyPopulated = false;
 
@@ -25,6 +28,6 @@ public class PopulatorListener implements ApplicationListener<ContextRefreshedEv
 		/*
 		 * if (!alreadyPopulated) { dao.save(new Populator().createMagasin());
 		 * alreadyPopulated = true; }
-		 */
+		*/
 	}
 }

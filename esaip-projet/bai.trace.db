@@ -1,0 +1,3 @@
+2017-02-04 10:00:26 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "IDEE" already exists; SQL statement:
+create table idee(id int primary key,titre varchar(255),contenu varchar(255),artiste varchar(255)) [42101-193]
