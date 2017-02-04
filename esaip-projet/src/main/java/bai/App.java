@@ -16,7 +16,6 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 
-import bai.data.entite.RenameRepository;
 import bai.data.acces.IdeeRepository;
 import bai.data.entite.Idee;
 import bai.util.*;
