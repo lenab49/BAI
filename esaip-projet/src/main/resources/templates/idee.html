@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+  <title>Idee</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <link th:href="@{/css/bootstrap.min.css}" rel="stylesheet"/>
+  <link th:href="@{/css/core.css}" rel="stylesheet"/>
+</head>
+
+<body th:with="page='idee'" >
+<div th:replace="fragments/header :: header">&nbsp;</div>
+<div class="container">
+	<div>
+		<h2>Ajouter une idée </h2>
+		<form action="/addIdee" method="POST">
+            Auteur <input type="text" id="auteur" name="auteur" /><br />
+            titre <input type="text" id="titre" name="titre" /><br />
+            Contenu <input type="text" id="contenu" name="contenu" /><br />
+            <input type="submit" />
+        </form>
+	</div>
+ 	<div th:replace="fragments/footer :: footer"></div>
+</div>
+</body>
+</html>

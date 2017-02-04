@@ -3,32 +3,34 @@
  * 
  * import java.util.List;
  * 
- * import javax.persistence.EntityManager; import
- * javax.persistence.PersistenceContext;
+ * import org.hibernate.HibernateException; import org.hibernate.Session; import
+ * org.hibernate.SessionFactory; import
+ * org.springframework.beans.factory.annotation.Autowired; import
+ * org.springframework.stereotype.Repository; import
+ * org.springframework.transaction.annotation.Transactional;
  * 
  * import bai.data.entite.Idee;
  * 
- * @Repository
+ * @Repository public class IdeeDao {
  * 
- * @Transactional public class IdeeDao {
+ * @Autowired private SessionFactory sessionFactory;
  * 
+ * @Transactional public void save(Idee idee) { Session session =
+ * sessionFactory.getCurrentSession(); session.save(idee); }
  * 
- * @PersistenceContext private EntityManager entityManager;
+ * @Transactional public List<Idee> list() { Session session =
+ * sessionFactory.getCurrentSession(); List<Idee> documents = null; try {
+ * documents = session.createQuery("from Idee").list();
  * 
- * public void create(Idee idee) { entityManager.persist(idee); return; }
+ * } catch (HibernateException e) { e.printStackTrace(); } return documents; }
  * 
- * public void delete(Idee idee) { if (entityManager.contains(idee))
- * entityManager.remove(idee); else
- * entityManager.remove(entityManager.merge(idee)); return; }
+ * @Transactional public Idee get(Integer id) { Session session =
+ * sessionFactory.getCurrentSession(); return session.get(Idee.class, id); }
  * 
- * @SuppressWarnings("unchecked") public List getAll() { return
- * entityManager.createQuery("from Idee").getResultList(); }
+ * @Transactional public void remove(Integer id) { Session session =
+ * sessionFactory.getCurrentSession();
  * 
- * public Idee getByAuteur(String auteur) { return (Idee)
- * entityManager.createQuery( "from Idee where auteur = :auteur")
- * .setParameter("auteur", auteur) .getSingleResult(); }
+ * Idee idee = session.get(Idee.class, id);
  * 
- * public Idee getById(long id) { return entityManager.find(Idee.class, id); }
- * 
- * }
+ * session.delete(idee); } }
  */
