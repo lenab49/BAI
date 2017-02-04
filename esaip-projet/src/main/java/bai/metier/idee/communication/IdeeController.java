@@ -2,6 +2,8 @@ package bai.metier.idee.communication;
 
 import java.util.Map;
 
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -33,19 +35,29 @@ public class IdeeController {
 		return "idee";
 	}
 	@RequestMapping(value="/addIdee",method=RequestMethod.POST)
-	public String addIdee(@ModelAttribute Idee idee,@RequestParam("titre") String titre,@RequestParam("contenu") String contenu, @RequestParam("auteur") String auteur,ModelMap model) {
-		if (idee.getAuteur() != "" && idee.getTitre() != "" && idee.getContenu() != "") {
-			ideeService.setNewIdee(idee);
-			BDDAction bdd = new BDDAction();
-			bdd.save(repository, idee);
-			model.put("idees", ideeService.getIdee());
-			   
+	public String addIdee(@ModelAttribute("idee") @Valid Idee idee,BindingResult result,ModelMap model) {
+		if(result.hasErrors()) {
+			System.out.println("Erreur"+result);
+			return "idee";
 		}
-		
-		
-		return "idee/listeidee";
-	}
+		else{
+			System.out.println("NOT ERREUR");
+//			if (idee.getAuteur() != "" && idee.getTitre() != "" && idee.getContenu() != "") {
+					ideeService.setNewIdee(idee);
+					BDDAction bdd = new BDDAction();
+					bdd.save(repository, idee);
+					model.put("idees", ideeService.getIdee());
+					   
+				//}
+				
+				
+				return "idee/listeidee";
+			}
+		}
+			
+		}
+		 
+	
 	
 	
 
-}

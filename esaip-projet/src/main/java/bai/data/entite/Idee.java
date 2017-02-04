@@ -5,6 +5,11 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.validation.constraints.Max;
+import javax.validation.constraints.Min;
+import javax.validation.constraints.Size;
+
+import org.hibernate.validator.constraints.NotEmpty;
 
 @Entity
 @Table(name="IDEE")
@@ -13,9 +18,12 @@ public class Idee {
 	@GeneratedValue
 	//@Column(name="id")
 	private Long id;
+	@NotEmpty
 	private String titre;
+	@NotEmpty
 	private String contenu;
 	//@Column(name="auteur")
+	@NotEmpty
 	private String auteur;
 
 	public Long getId() {

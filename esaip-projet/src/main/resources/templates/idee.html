@@ -14,12 +14,18 @@
 <div class="container">
 	<div>
 		<h2>Ajouter une idée </h2>
-		<form action="/addIdee" method="POST">
-            Auteur <input type="text" id="auteur" name="auteur" /><br />
+		<form action="/addIdee" method="POST" commandName="idee">
+		<p>
+			Auteur:
+			<input type="text" name="auteur" id="auteur" />
+			<form:errors path="auteur" cssclass="error"></form:errors>
+		</p>
+          <!--   Auteur <input type="text" id="auteur" name="auteur" /><br />-->
             titre <input type="text" id="titre" name="titre" /><br />
             Contenu <input type="text" id="contenu" name="contenu" /><br />
-            <input type="submit" value="Submit" /> />
+            <input type="submit" value="Submit" />
         </form>
+        
 	</div>
  	<div th:replace="fragments/footer :: footer"></div>
 </div>
