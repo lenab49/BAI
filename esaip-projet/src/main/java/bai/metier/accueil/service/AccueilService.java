@@ -9,7 +9,7 @@ import bai.data.acces.BoiteAIdeeDao;
 import bai.data.entite.BoiteAIdee;
 
 @Service
-//@Transactional(propagation = Propagation.REQUIRED)
+@Transactional(propagation = Propagation.REQUIRED)
 public class AccueilService {
 	final BoiteAIdeeDao boiteAIdeeDao;
 
