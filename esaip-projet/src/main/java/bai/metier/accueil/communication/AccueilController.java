@@ -28,11 +28,7 @@ public class AccueilController {
 	@RequestMapping(method = RequestMethod.GET)
 	public String home(Map<String, Object> model) {
 		model.put("nom", boiteAIdeeService.getBoiteAIdee().getNom());
-		/*
-		 * Idee id=new Idee(); BDDAction tst=new BDDAction();
-		 * id.setAuteur("lamaitresse"); id.setContenu("en");
-		 * id.setTitre("maillotdebain"); tst.save(repository, id);
-		 */
+		model.put("slogan", "Cette application permet de recueillir vos idées");
 		return "home";
 	}
 }

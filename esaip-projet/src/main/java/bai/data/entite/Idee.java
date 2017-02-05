@@ -16,13 +16,11 @@ import org.hibernate.validator.constraints.NotEmpty;
 public class Idee {
 	@Id
 	@GeneratedValue
-	//@Column(name="id")
 	private Long id;
 	@NotEmpty
 	private String titre;
 	@NotEmpty
 	private String contenu;
-	//@Column(name="auteur")
 	@NotEmpty
 	private String auteur;
 

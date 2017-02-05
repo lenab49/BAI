@@ -8,6 +8,7 @@
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
   <link th:href="@{/css/bootstrap.min.css}" rel="stylesheet"/>
   <link th:href="@{/css/core.css}" rel="stylesheet"/>
+  <link rel="shortcut icon" href="static/favicon.ico"/>
 </head>
 <body th:with="page='idee'" >
 <div th:replace="fragments/header :: header">&nbsp;</div>
@@ -15,15 +16,13 @@
 	<div>
 		<h2>Ajouter une idée </h2>
 		<form action="/addIdee" method="POST" commandName="idee">
-		<p>
-			Auteur:
-			<input type="text" name="auteur" id="auteur" />
-			<form:errors path="auteur" cssclass="error"></form:errors>
-		</p>
-          <!--   Auteur <input type="text" id="auteur" name="auteur" /><br />-->
-            titre <input type="text" id="titre" name="titre" /><br />
+          Auteur <input type="text" id="auteur" name="auteur" /><br />
+          <form:errors path="auteur" ></form:errors>
+          Titre <input type="text" id="titre" name="titre" /><br />
+          <form:errors path="titre" ></form:errors>
             Contenu <input type="text" id="contenu" name="contenu" /><br />
-            <input type="submit" value="Submit" />
+            <form:errors path="contenu" ></form:errors>
+            <input type="submit" value="Submit" id="submit"/>
         </form>
         
 	</div>

@@ -6,7 +6,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import bai.data.entite.BoiteAIdee;
 
-//@Transactional(propagation = Propagation.REQUIRED)
+@Transactional(propagation = Propagation.REQUIRED)
 public interface BoiteAIdeeDao extends JpaRepository<BoiteAIdee, Long> {
 	BoiteAIdee findByNom(String nom);
 }

@@ -1,6 +1,6 @@
-package bai.data.entite;
+package bai.data.acces;
 
-import bai.data.acces.IdeeRepository;
+import bai.data.entite.Idee;
 
 public class BDDAction {
 	

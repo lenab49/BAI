@@ -16,7 +16,6 @@ import bai.data.acces.BoiteAIdeeDao;
 public class PopulatorListener implements ApplicationListener<ContextRefreshedEvent> {
 	  
 	private final BoiteAIdeeDao dao;
-	// private boolean alreadyPopulated = false;
 
 	@Autowired
 	public PopulatorListener(BoiteAIdeeDao dao) {
@@ -25,9 +24,6 @@ public class PopulatorListener implements ApplicationListener<ContextRefreshedEv
 
 	@Override
 	public void onApplicationEvent(ContextRefreshedEvent event) {
-		/*
-		 * if (!alreadyPopulated) { dao.save(new Populator().createMagasin());
-		 * alreadyPopulated = true; }
-		*/
+	
 	}
 }

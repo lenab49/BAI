@@ -13,8 +13,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import bai.data.acces.BDDAction;
 import bai.data.acces.IdeeRepository;
-import bai.data.entite.BDDAction;
 import bai.data.entite.Idee;
 import bai.metier.idee.service.IdeeService;
 
@@ -41,16 +41,10 @@ public class IdeeController {
 			return "idee";
 		}
 		else{
-			System.out.println("NOT ERREUR");
-//			if (idee.getAuteur() != "" && idee.getTitre() != "" && idee.getContenu() != "") {
 					ideeService.setNewIdee(idee);
 					BDDAction bdd = new BDDAction();
 					bdd.save(repository, idee);
 					model.put("idees", ideeService.getIdee());
-					   
-				//}
-				
-				
 				return "idee/listeidee";
 			}
 		}

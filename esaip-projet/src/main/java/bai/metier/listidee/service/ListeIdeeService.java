@@ -14,14 +14,11 @@ import bai.data.entite.Idee;
 @Service
 @Transactional(propagation = Propagation.REQUIRED)
 public class ListeIdeeService {
-
 	final BoiteAIdeeDao boiteAIdeeDao;
-
 	@Autowired
 	public ListeIdeeService(BoiteAIdeeDao boiteAIdeeDao) {
 		this.boiteAIdeeDao = boiteAIdeeDao;
 	}
-
 	public List<Idee> getIdee() {
 		List<Idee> idees = boiteAIdeeDao.findByNom("BAI").getListeIdee().getIdee();
 		if (idees.size() > 0) {
